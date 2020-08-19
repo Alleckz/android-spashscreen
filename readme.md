@@ -8,7 +8,7 @@ You may be surprised to hear that Google advocates that you use a splash screen.
 **Implementing a Splash Screen**
 Implementing a splash screen the right way is a little different than you might imagine. The splash view that you see has to be ready immediately, even before you can inflate a layout file in your splash activity.
 
-So you will not use a layout file. Instead, specify your splash screen’s background as the activity’s theme background. To do this, first create an XML drawable in res/drawable.
+So you will not use a layout file. Instead, specify your splash screen’s background as the activity’s theme background. To do this, first create an XML drawable in `android-spashscreen/app/src/main/res/drawable/bgd_splash_screen.xml`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -24,7 +24,7 @@ So you will not use a layout file. Instead, specify your splash screen’s backg
 ```
 
 Here, I’ve set up a background gradient and an image.
-The background gradient is created with a drawable shape through the new XML file `bgd_gradient.xml`
+The background gradient is created with a drawable shape through the new XML file `android-spashscreen/app/src/main/res/drawable/bgd_gradient.xml`.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -41,7 +41,7 @@ The background gradient is created with a drawable shape through the new XML fil
 </shape>
 ```
 
-Next, you will set this as your splash activity’s background in the theme. Navigate to your styles.xml file and add a new theme for your splash activity:
+Next, you will set this as your splash activity’s background in the theme. Navigate to your `android-spashscreen/app/src/main/res/values/styles.xml` file and add a new theme for your splash activity:
 
 ```xml
 <resources>
@@ -58,7 +58,7 @@ Next, you will set this as your splash activity’s background in the theme. Nav
 </resources>
 ```
 
-Configure this as your splash activity’s theme in your AndroidManifest.xml:
+Configure this as your splash activity’s theme in your `android-spashscreen/app/src/main/AndroidManifest.xml`:
 
 ```xml
 (...)
@@ -76,7 +76,7 @@ Configure this as your splash activity’s theme in your AndroidManifest.xml:
 (...)
 ```
 
-Finally, your SplashActivity class should just forward you along to your main activity:
+Finally, your SplashActivity class should just forward you along to your main activity `android-spashscreen/app/src/main/java/com/hangapps/splashscreen/SplashScreenActivity.java` :
 
 ```java
 @Override
